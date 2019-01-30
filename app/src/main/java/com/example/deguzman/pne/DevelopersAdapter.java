@@ -83,6 +83,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("2")) {
 
@@ -93,6 +96,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("3")) {
@@ -105,6 +111,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("4")) {
 
@@ -115,6 +124,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("5")) {
@@ -127,6 +139,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("6")) {
 
@@ -137,6 +152,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("7")) {
@@ -149,6 +167,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("8")) {
 
@@ -159,6 +180,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("9")) {
@@ -171,6 +195,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("10")) {
 
@@ -181,6 +208,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("11")) {
@@ -193,6 +223,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("12")) {
 
@@ -203,6 +236,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("13")) {
@@ -215,6 +251,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("14")) {
 
@@ -225,6 +264,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(developersList.getPlant_no().equals("15")) {
@@ -237,6 +279,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(developersList.getPlant_no().equals("16")) {
 
@@ -247,6 +292,9 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
             else if (developersList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
 
@@ -342,7 +390,6 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 loc.append("A1");
                 loc.getResources().getColor(R.color.colorAccent);
             }*/
-
 
 
 

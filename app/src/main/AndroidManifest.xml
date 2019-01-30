@@ -11,12 +11,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="PlantEase"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:replace="android:icon,android:theme">
+        tools:replace="android:icon,android:theme, replace=android:label">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,12 +37,12 @@
         <activity android:name=".AddPlantList" />
         <activity android:name=".AddingPlant" />
         <activity android:name=".AddPlantView" />
-        <activity android:name=".LibraryView"></activity>
-        <activity android:name=".Library"
-            android:theme="@style/AppTheme.Library"
-            ></activity>
-
-        <activity android:name=".Summary"></activity>
+        <activity android:name=".LibraryView" />
+        <activity
+            android:name=".Library"
+            android:theme="@style/AppTheme.Library" />
+        <activity android:name=".Summary" />
+        <activity android:name=".Loading"></activity>
     </application>
 
 </manifest>

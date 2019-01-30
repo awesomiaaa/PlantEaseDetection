@@ -10,14 +10,14 @@ import java.net.URL;
 public class activate extends AsyncTask<Void, Void, String> {
     String data="";
     String result = "";
-
+    public static String urlParameters;
     @Override
     protected String doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("http://172.20.10.6:8080/Scans/?format=json");
+            URL url = new URL("http://192.168.1.8:8080/Scans/?format=json");
 
-            String urlParameters = "status=True";
+            urlParameters = "status=True";
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
@@ -69,6 +69,7 @@ public class activate extends AsyncTask<Void, Void, String> {
 
         } catch (MalformedURLException e) {
             e.printStackTrace();*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,8 +81,23 @@ public class activate extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String aVoid) {
         super.onPostExecute(aVoid);
 
+      /*  System.out.println("asdasdasd");
+        if(urlParameters.equals("false")){
+            System.out.println("1");
+            ScanActivity.progressDialog.dismiss();
+        }else{
+            System.out.println("2");
+            ScanActivity.progressDialog.show();
+            try{
+                WebDriverWait wait = new WebDriverWait(AppiumController.instance.driver, timeout);
+                urlParameters.until()
+            }catch{
+
+            }*/
+
 
     }
+
 }
 
 

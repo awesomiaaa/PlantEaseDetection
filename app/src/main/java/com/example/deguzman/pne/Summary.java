@@ -37,7 +37,7 @@ public class Summary extends AppCompatActivity {
         ContentResolver contentResolver = context.getContentResolver();
         return Settings.System.getInt(contentResolver, AIRPLANE_MODE_ON, 0) != 0;
     }
-    private static final String URL_DATA = "http://172.20.10.6:8080/Scans/?format=json";
+    private static final String URL_DATA = "http://192.168.1.8:8080/Scans/?format=json";
 
     private RecyclerView recyclerView, recyclerViewh;
     private RecyclerView.Adapter adapter;

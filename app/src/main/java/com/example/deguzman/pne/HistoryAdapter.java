@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.provider.Settings;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import static android.provider.Settings.System.AIRPLANE_MODE_ON;
 
@@ -74,7 +78,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         final HistoryList historyList = historyLists.get(position);
         holder.condition.setText(historyList.getCondition());
         holder.plant_no.setText(historyList.getPlant_no());
+/*
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(timestamp);
+        String date1 = DateFormat.format("dd-MM-yyyy hh:mm:ss", cal).toString();
+        */
+
         holder.date.setText(historyList.getDate());
+
         if(historyList.getPlant_no().equals("1")) {
 
             holder.loc.setText("A1");
@@ -85,6 +96,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             else if (historyList.getCondition().equalsIgnoreCase("healthy")) {
              //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(historyList.getPlant_no().equals("2")) {
@@ -97,6 +111,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(historyList.getPlant_no().equals("3")) {
 
@@ -107,6 +124,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             else if (historyList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(historyList.getPlant_no().equals("4")) {
@@ -119,6 +139,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(historyList.getPlant_no().equals("5")) {
 
@@ -129,6 +152,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             else if (historyList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
         if(historyList.getPlant_no().equals("6")) {
@@ -141,6 +167,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(historyList.getPlant_no().equals("7")) {
 
@@ -152,6 +181,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
+            }
         }
         if(historyList.getPlant_no().equals("8")) {
 
@@ -162,6 +194,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             else if (historyList.getCondition().equalsIgnoreCase("healthy")) {
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
+            }
+            else{
+                holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }
 
@@ -231,6 +266,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             super(itemView);
 
             // initialize the View object
+
+
 
             card = (CardView) itemView.findViewById(R.id.card);
             loc = (TextView) itemView.findViewById(R.id.loc);

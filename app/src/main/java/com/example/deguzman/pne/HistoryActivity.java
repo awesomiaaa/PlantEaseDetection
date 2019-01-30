@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
-    private static final String URL_DATA = "http://172.20.10.6:8080/Scans/?format=json";
+    private static final String URL_DATA = "http://192.168.1.8:8080/Scans/?format=json";
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;

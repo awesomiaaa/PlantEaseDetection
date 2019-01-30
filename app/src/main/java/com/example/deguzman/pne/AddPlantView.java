@@ -8,6 +8,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.os.AsyncTask;
+import cz.msebera.android.httpclient.Header;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
 public class AddPlantView extends AppCompatActivity {
 
     @Override
@@ -41,9 +46,40 @@ public class AddPlantView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
               //  Toast.makeText(AddPlantView.this,"Sign In Button Clicked",Toast.LENGTH_LONG).show();
+
+                activate process = new activate();
+                process.execute();
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("http://192.168.1.8:8080/start", new AsyncHttpResponseHandler() {
+
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+/*
+                        onDisplay process = new onDisplay();
+                        process.execute();
+*/
+                        /*deactivate deact = new deactivate();
+                        deact.execute();*/
+                  /*      System.out.println("s");
+                        Intent i = new Intent(AddPlantView.this, ScanActivity.class);
+                        startActivity(i);*/
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                    }
+
+
+                });/*
+                System.out.println("done");*/
+
                 Intent i = new Intent(AddPlantView.this, ScanActivity.class);
                 startActivity(i);
             }
         });
+
+
     }
 }

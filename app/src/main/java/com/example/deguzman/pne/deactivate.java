@@ -17,7 +17,7 @@ public class deactivate extends AsyncTask<Void,Void,Void> {
 
 
         try {
-            URL url = new URL("http://192.168.1.10:8080/Scans/?format=json");
+            URL url = new URL("http://192.168.1.8:8080/Scans/?format=json");
 
             String urlParameters = "status=False";
 

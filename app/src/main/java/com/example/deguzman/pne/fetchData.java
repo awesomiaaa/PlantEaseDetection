@@ -21,7 +21,7 @@ public class fetchData extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         try {
-            URL url = new URL("http://192.168.1.14:8080/Scans/?format=json");
+            URL url = new URL("http://192.168.1.8:8080/Scans/?format=json");
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();

@@ -8,13 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
@@ -36,9 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.provider.Settings.System.AIRPLANE_MODE_ON;
-import static com.loopj.android.http.AsyncHttpClient.LOG_TAG;
 
-public class ScanActivity extends AppCompatActivity {
+public class Loading extends AppCompatActivity {
 
     final Context context = this;
     static boolean isAirplaneModeOn(Context context) {
@@ -46,12 +42,10 @@ public class ScanActivity extends AppCompatActivity {
         return Settings.System.getInt(contentResolver, AIRPLANE_MODE_ON, 0) != 0;
     }
     private static final String URL_DATA = "http://192.168.1.8:8080/Scans/?format=json";
-    public static ProgressDialog progressDialog;
+
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<DevelopersList> developersLists;
-
-    private SwipeRefreshLayout mySwipeRefreshLayout;
 
     private JSONObject jo;
 
@@ -87,7 +81,7 @@ public class ScanActivity extends AppCompatActivity {
                 loadUrlData();
                 dialog.show();*/
 
-                startActivity(new Intent(ScanActivity.this, Summary.class));
+                startActivity(new Intent(Loading.this, Summary.class));
             }
 
         });
@@ -114,33 +108,26 @@ public class ScanActivity extends AppCompatActivity {
                                  }
         );*/
 
-
-
-
-                        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-                        recyclerView.setHasFixedSize(true);
-                        /*recyclerView.setLayoutManager(new LinearLayoutManager(this));*/
-                        GridLayoutManager gridLayoutManager = new GridLayoutManager(ScanActivity.this, 2);
-                        recyclerView.setLayoutManager(gridLayoutManager);
-                        developersLists = new ArrayList<>();
-                        loadUrlData();
-
+/*        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        *//*recyclerView.setLayoutManager(new LinearLayoutManager(this));*//*
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(ScanActivity.this, 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        developersLists = new ArrayList<>();*/
+        loadUrlData();
     }
-
-
     private void loadUrlData() {
 
-        progressDialog = new ProgressDialog(this);
+        final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.show();
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 URL_DATA, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-
+                progressDialog.dismiss();
 
                 try {
 
@@ -166,29 +153,24 @@ public class ScanActivity extends AppCompatActivity {
                     for (int l = 0; l < a.length(); l++) {
                         JSONObject rec = a.getJSONObject(l);
 
-                        DevelopersList developers = new DevelopersList(
-                                rec.getString("condition"),
-                                jo.getBoolean("status"),
-                                jo.getString("id"),
-                                rec.getString("plant_no"),
-                                rec.getString("disease"),
-                                rec.getString("diagnosis"),
-                                rec.getString("model_pic"));
+//                        DevelopersList developers = new DevelopersList(
+//                                rec.getString("condition"),
+//                                jo.getBoolean("status"),
+//                                jo.getString("id"),
+//                                rec.getString("plant_no"),
+//                                rec.getString("disease"),
+//                                rec.getString("diagnosis"),
+//                                rec.getString("model_pic"));
+//
+//
+//
+//                        developersLists.add(developers);
 
-
-
-                        developersLists.add(developers);
-                        System.out.println( rec.getString("condition"));
-
-                        if(jo.optString("status").equals("false")){
+                        if(jo.optString("status").equalsIgnoreCase("false")){
                             System.out.println("Unhealthy");
 
+                        }
 
-                        }
-                        if(rec.optString("condition").equalsIgnoreCase("healthy")){
-                            System.out.println("Healthy");
-                            System.out.println(rec.optString("plant_no"));
-                        }
                     }
 
 
@@ -196,25 +178,9 @@ public class ScanActivity extends AppCompatActivity {
 
 
 
-                    adapter = new DevelopersAdapter(developersLists, getApplicationContext());
+                  /*  adapter = new DevelopersAdapter(developersLists, getApplicationContext());
 
-                    recyclerView.setAdapter(adapter);
-
-
-                    if(jo.optString("status").equals("false")) {
-                        progressDialog.dismiss();
-                    }else {
-                        System.out.println(jo.optString("status"));
-                        Intent intent = getIntent();
-                        finish();
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        startActivity(intent);
-
-
-
-                    }
-
-
+                    recyclerView.setAdapter(adapter);*/
 
                 } catch (JSONException e) {
 
@@ -225,7 +191,7 @@ public class ScanActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(ScanActivity.this, "Error" + error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Loading.this, "Error" + error.toString(), Toast.LENGTH_SHORT).show();
 
             }
         });
