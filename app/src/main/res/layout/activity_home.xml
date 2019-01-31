@@ -35,15 +35,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="5dp"
         android:rowCount="2"
         android:layout_gravity="bottom"
         >
 
         <Button
             android:id="@+id/library"
-            android:layout_width="205dp"
+            android:layout_width="198dp"
             android:layout_height="200dp"
             android:layout_row="0"
             android:layout_column="0"
@@ -60,7 +58,7 @@
 
         <Button
             android:id="@+id/scan"
-            android:layout_width="205dp"
+            android:layout_width="198dp"
             android:layout_height="200dp"
             android:layout_row="0"
             android:layout_column="1"
@@ -75,7 +73,7 @@
 
         <Button
             android:id="@+id/history"
-            android:layout_width="205dp"
+            android:layout_width="198dp"
             android:layout_height="200dp"
             android:background="@drawable/home_button"
             android:drawableTop="@drawable/clock"
@@ -92,7 +90,7 @@
 
         <Button
             android:id="@+id/about"
-            android:layout_width="205dp"
+            android:layout_width="198dp"
             android:layout_height="200dp"
             android:background="@drawable/home_button"
             android:paddingTop="50dp"

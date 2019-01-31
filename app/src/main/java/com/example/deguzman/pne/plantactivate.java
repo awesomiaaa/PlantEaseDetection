@@ -11,13 +11,13 @@ public class plantactivate extends AsyncTask<Void, Void, String> {
     String data="";
     String result = "";
     public static String urlParameters, urlParameters1, id, plant_name, specific_plant, plant_width, plot_size, plant_distance;
-    public static String a, b, c, d, e;
+    String a, b, c, d, e;
 
     @Override
     protected String doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("http://192.168.1.8:8080/Plant_Listers/?format=json");
+            URL url = new URL("http://192.168.43.173:8080/Plant_Listers/?format=json");
 
             plant_name = AddPlantView.plantname.getText().toString().replaceAll("\\s+","").split(":")[1];
             specific_plant = AddPlantView.spec_plant.getText().toString().replaceAll("\\s+","").split(":")[1];

@@ -23,6 +23,7 @@ public class TabFragment2 extends Fragment {
 
         tab.setText(diagnosis);
 
+
         return view;
 
     }

@@ -34,8 +34,14 @@ public class TabFragment1 extends Fragment {
 
         tab = (TextView) view.findViewById(R.id.textView2);
 
-        tab.setText(disease);
+
         tab.setText(libdisease);
+
+
+        tab.setText(disease);
+
+
+
         return view;
     }
 

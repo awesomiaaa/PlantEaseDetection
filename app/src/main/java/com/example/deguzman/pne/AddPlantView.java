@@ -60,7 +60,7 @@ public class AddPlantView extends AppCompatActivity {
 
 
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://192.168.1.8:8080/start", new AsyncHttpResponseHandler() {
+                client.get("http://192.168.43.173:8080/start", new AsyncHttpResponseHandler() {
 
 
                     @Override

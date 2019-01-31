@@ -45,7 +45,7 @@ public class ScanActivity extends AppCompatActivity {
         ContentResolver contentResolver = context.getContentResolver();
         return Settings.System.getInt(contentResolver, AIRPLANE_MODE_ON, 0) != 0;
     }
-    private static final String URL_DATA = "http://192.168.1.8:8080/Scans/?format=json";
+    private static final String URL_DATA = "http://192.168.43.173:8080/Scans/?format=json";
     public static ProgressDialog progressDialog;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
