@@ -7,20 +7,38 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class activate extends AsyncTask<Void, Void, String> {
+public class plantactivate extends AsyncTask<Void, Void, String> {
     String data="";
     String result = "";
-    public static String urlParameters, urlParameters1, plant_name, specific_plant, plant_width, plot_size, plant_distance;
-
+    public static String urlParameters, urlParameters1, id, plant_name, specific_plant, plant_width, plot_size, plant_distance;
+    public static String a, b, c, d, e;
 
     @Override
     protected String doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("http://192.168.1.8:8080/Scans/?format=json");
+            URL url = new URL("http://192.168.1.8:8080/Plant_Listers/?format=json");
+
+            plant_name = AddPlantView.plantname.getText().toString().replaceAll("\\s+","").split(":")[1];
+            specific_plant = AddPlantView.spec_plant.getText().toString().replaceAll("\\s+","").split(":")[1];
+            plant_width = AddPlantView.plot_width.getText().toString().replaceAll("\\s+","").split(":")[1];
+            plot_size = AddPlantView.plot_size.getText().toString().replaceAll("\\s+","").split(":")[1];
+            plant_distance = AddPlantView.plant_distance.getText().toString().replaceAll("\\s+","").split(":")[1];
+
+            a=plant_name;
+            b=specific_plant;
+            c=plant_width;
+            d=plot_size;
+            e=plant_distance;
 
 
-            urlParameters = "status=True";
+            String urlParameters = "plant_name="+ a + "&specific_plant=" + b + "&plant_width="+ c +"&plot_size="+ d + "&plant_distance=" + e ;
+//            String urlParameters = "plant_name="+ plant_name + "&specific_plant=" + specific_plant + "&plant_width="+ plant_width +"&plot_size="+ plot_size + "&plant_distance=" + plant_distance ;
+
+//            String urlParameters="plant_name="+plant_name+"&specific_plant="+specific_plant+"&plant_width="+"asdasd"+"&plot_size=asdasda&plant_distance=sadasda" ;
+            System.out.println(urlParameters);
+//            urlParameters = "plant_name=asd";
+
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");

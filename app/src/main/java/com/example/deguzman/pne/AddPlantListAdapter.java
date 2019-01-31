@@ -29,6 +29,8 @@ public class AddPlantListAdapter extends RecyclerView.Adapter<AddPlantListAdapte
         ContentResolver contentResolver = context.getContentResolver();
         return Settings.System.getInt(contentResolver, AIRPLANE_MODE_ON, 0) != 0;
     }
+
+    public static final String KEY_ID = "id";
     public static final String KEY_PLANT_NAME = "plant_name";
     public static final String KEY_SPEC_PLANT = "specific_plant";
     public static final String KEY_PLANT_DIST = "plant_distance";
@@ -95,6 +97,7 @@ public class AddPlantListAdapter extends RecyclerView.Adapter<AddPlantListAdapte
                 AddPlantList addPlant = addPLantLists.get(position);
                 Intent skipIntent = new Intent(v.getContext(), AddPlantView.class);
                 //          skipIntent.putExtra(KEY_PLANT_TYPE, developersList1.getPlant_type());
+                skipIntent.putExtra(KEY_ID, addPlant.getId());
                 skipIntent.putExtra(KEY_PLANT_NAME, addPlant.getPlant_name());
                 //    skipIntent.putExtra(KEY_DATE, historyList1.getDate());
                 skipIntent.putExtra(KEY_SPEC_PLANT, addPlant.getSpecific_plant());

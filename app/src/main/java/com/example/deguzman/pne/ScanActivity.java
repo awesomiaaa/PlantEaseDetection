@@ -59,6 +59,7 @@ public class ScanActivity extends AppCompatActivity {
     public static TextView data, outputPost, loc, plant_no;
 
 
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

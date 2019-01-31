@@ -266,7 +266,9 @@ public class AddPlantActivity extends AppCompatActivity {
                   //      JSONArray ar = jo.getJSONArray("scan_details");
                         for (int l = 0; l < array.length(); l++) {
                             JSONObject rec = array.getJSONObject(l);
-                            AddPlantList addplantlist = new AddPlantList(rec.getString("plant_name"),
+                            AddPlantList addplantlist = new AddPlantList(
+                                    rec.getString("id"),
+                                    rec.getString("plant_name"),
                                     rec.getString("specific_plant"),
                                     rec.getString("plant_width"),
                                     rec.getString("plot_size"),

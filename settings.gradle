@@ -1,1 +1,1 @@
-include ':app', ':library', ':floatingactionmenu', ':customnavigationdrawer2'
+include ':app', ':library', ':floatingactionmenu', ':customnavigationdrawer2', ':lib'

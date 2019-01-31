@@ -15,16 +15,20 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class AddPlantView extends AppCompatActivity {
 
+    public static TextView plantname, spec_plant, plant_distance, plot_size, plot_width;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_plant_view);
 
-        TextView plantname = (TextView) findViewById(R.id.plant_name);
-        TextView spec_plant = (TextView) findViewById(R.id.spec_plant);
-        TextView plant_distance = (TextView) findViewById(R.id.plant_distance);
-        TextView plot_size = (TextView) findViewById(R.id.plot_size);
-        TextView plot_width = (TextView) findViewById(R.id.plot_width);
+        plantname = (TextView) findViewById(R.id.plant_name);
+        spec_plant = (TextView) findViewById(R.id.spec_plant);
+        plant_distance = (TextView) findViewById(R.id.plant_distance);
+        plot_size = (TextView) findViewById(R.id.plot_size);
+        plot_width = (TextView) findViewById(R.id.plot_width);
 
         Intent intent = getIntent();
         //    final String plant_type = intent.getStringExtra(DevelopersAdapter.KEY_PLANT_TYPE);
@@ -33,6 +37,7 @@ public class AddPlantView extends AppCompatActivity {
         final String plantd = intent.getStringExtra(AddPlantListAdapter.KEY_PLANT_DIST);
         final String plots = intent.getStringExtra(AddPlantListAdapter.KEY_PLOT_SIZE);
         final String plotw = intent.getStringExtra(AddPlantListAdapter.KEY_PLANT_WIDTH);
+        final String id = intent.getStringExtra(AddPlantListAdapter.KEY_ID);
 
         plantname.setText("Name: " + plantn);
         spec_plant.setText("Specific Plant: " + specp);
@@ -40,15 +45,20 @@ public class AddPlantView extends AppCompatActivity {
         plot_size.setText("Plot Size: " + plots);
         plot_width.setText("Plot Width: " + plotw);
 
+        System.out.println(id);
+
         Button start = (Button) findViewById(R.id.start);
 
         start.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
               //  Toast.makeText(AddPlantView.this,"Sign In Button Clicked",Toast.LENGTH_LONG).show();
-
+                plantactivate plantlister = new plantactivate();
+                plantlister.execute();
                 activate process = new activate();
                 process.execute();
+
+
                 AsyncHttpClient client = new AsyncHttpClient();
                 client.get("http://192.168.1.8:8080/start", new AsyncHttpResponseHandler() {
 

@@ -10,12 +10,14 @@ import static android.net.wifi.WifiConfiguration.Status.strings;
 
 public class AddPlantList {
 
+    private String id;
     private String plant_name;
     private String specific_plant;
     private String plant_width;
     private String plot_size;
     private String plant_distance;
 
+    public String getId() { return id; }
     public String getPlant_name() { return plant_name; }
     public String getSpecific_plant() { return specific_plant; }
     public String getPlant_width() { return plant_width; }
@@ -23,7 +25,8 @@ public class AddPlantList {
     public String getPlant_distance() { return plant_distance; }
 
 
-    public AddPlantList(String plant_name, String specific_plant, String plant_width, String plot_size, String plant_distance) {
+    public AddPlantList(String id, String plant_name, String specific_plant, String plant_width, String plot_size, String plant_distance) {
+        this.id = id;
         this.plant_name = plant_name;
         this.specific_plant = specific_plant;
         this.plant_width = plant_width;

@@ -26,7 +26,9 @@ public class DisplayActivity extends AppCompatActivity {
         final String diagnosis = intent.getStringExtra(DevelopersAdapter.KEY_DIAGNOSIS);
         final String pic = intent.getStringExtra(DevelopersAdapter.KEY_IMAGE);
         final String plant = intent.getStringExtra(DevelopersAdapter.KEY_PLANT_NO);
+        final String p = intent.getStringExtra(plantactivate.a);
 
+        System.out.println(p);
         TextView conditionView = (TextView) findViewById(R.id.con);
         TextView diseaseView = (TextView) findViewById(R.id.textView);
         final TextView diagnosisView = (TextView) findViewById(R.id.textView2);
@@ -105,10 +107,11 @@ public class DisplayActivity extends AppCompatActivity {
     //        diagnosisView.setText(diagnosis);
 
 
-            final String name = intent.getStringExtra(AddPlantListAdapter.KEY_PLANT_NAME);
+            //final String name = intent.getStringExtra(AddPlantListAdapter.KEY_PLANT_NAME);
 
             TextView plantn = (TextView) findViewById(R.id.name);
-            plantn.setText(name);
+
+            plantn.setText(p);
 
             conditionView.setText(condition);
      //       diseaseView.setText(disease);
