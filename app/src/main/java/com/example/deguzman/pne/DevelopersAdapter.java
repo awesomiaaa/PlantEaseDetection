@@ -83,7 +83,8 @@ public class DevelopersAdapter extends RecyclerView.Adapter<DevelopersAdapter.Vi
                 //   holder.card.setCardBackgroundColor(Color.parseColor("Green"));
                 holder.card.setBackgroundResource(R.drawable.background);
             }
-            else{
+            else if (developersList.getCondition().equalsIgnoreCase("object")){
+                holder.condition.setText("Not a Plant");
                 holder.card.setBackgroundResource(R.drawable.whitebg);
             }
         }

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.deguzman.pne"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -50,4 +50,6 @@ dependencies {
 
     implementation 'com.github.clans:fab:1.6.4'
 
+    implementation 'br.com.simplepass:loading-button-android:1.7.2'
+    implementation 'com.github.HOTBitmapGG:RingProgressBar:V1.2.2'
 }

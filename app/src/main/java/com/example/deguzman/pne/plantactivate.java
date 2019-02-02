@@ -17,7 +17,7 @@ public class plantactivate extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("http://192.168.43.173:8080/Plant_Listers/?format=json");
+            URL url = new URL("http://172.20.10.5:8080/Plant_Listers/?format=json");
 
             plant_name = AddPlantView.plantname.getText().toString().replaceAll("\\s+","").split(":")[1];
             specific_plant = AddPlantView.spec_plant.getText().toString().replaceAll("\\s+","").split(":")[1];

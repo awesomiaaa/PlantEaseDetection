@@ -23,11 +23,12 @@ public class DisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         //    final String plant_type = intent.getStringExtra(DevelopersAdapter.KEY_PLANT_TYPE);
-        final String condition = intent.getStringExtra(DevelopersAdapter.KEY_CONDITION);
-        final String disease = intent.getStringExtra(DevelopersAdapter.KEY_DISEASE);
-        final String diagnosis = intent.getStringExtra(DevelopersAdapter.KEY_DIAGNOSIS);
+        condition = intent.getStringExtra(DevelopersAdapter.KEY_CONDITION);
+        disease = intent.getStringExtra(DevelopersAdapter.KEY_DISEASE);
+        diagnosis = intent.getStringExtra(DevelopersAdapter.KEY_DIAGNOSIS);
         final String pic = intent.getStringExtra(DevelopersAdapter.KEY_IMAGE);
-        final String plant = intent.getStringExtra(DevelopersAdapter.KEY_PLANT_NO);
+        plant = intent.getStringExtra(DevelopersAdapter.KEY_PLANT_NO);
+
 
 
         TextView conditionView = (TextView) findViewById(R.id.con);
@@ -36,36 +37,41 @@ public class DisplayActivity extends AppCompatActivity {
         TextView plantnoView = (TextView) findViewById(R.id.pn);
         ImageView picView = (ImageView) findViewById(R.id.imageView1);
 
+
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Disease"));
-        tabLayout.addTab(tabLayout.newTab().setText("Diagnosis"));
-        tabLayout.addTab(tabLayout.newTab().setText("Preventive Measures"));
-        tabLayout.addTab(tabLayout.newTab().setText("Ways to Control"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+            tabLayout.addTab(tabLayout.newTab().setText("Disease"));
+            tabLayout.addTab(tabLayout.newTab().setText("Diagnosis"));
+            tabLayout.addTab(tabLayout.newTab().setText("Preventive Measures"));
+            tabLayout.addTab(tabLayout.newTab().setText("Ways to Control"));
 
-        final PagerAdapter adapter = new PagerAdapter
-                (getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
 
-            }
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+            final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            final PagerAdapter adapter = new PagerAdapter
+                    (getSupportFragmentManager(), tabLayout.getTabCount());
+            viewPager.setAdapter(adapter);
+            viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+            tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                @Override
+                public void onTabSelected(TabLayout.Tab tab) {
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
 
-            }
+                @Override
+                public void onTabUnselected(TabLayout.Tab tab) {
 
-        });
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab tab) {
+
+                }
+
+            });
 
       /*  TextView diagnosisTxt = (TextView) findViewById(R.id.diagnosistxt);
         TextView diseaseTxt = (TextView) findViewById(R.id.Disease);
@@ -105,26 +111,23 @@ public class DisplayActivity extends AppCompatActivity {
             else{
 
             }*/
-    //        diagnosisView.setText(diagnosis);
+            //        diagnosisView.setText(diagnosis);
 
 
             //final String name = intent.getStringExtra(AddPlantListAdapter.KEY_PLANT_NAME);
 
-          //  TextView plantn = (TextView) findViewById(R.id.name);
+            //  TextView plantn = (TextView) findViewById(R.id.name);
 
-           // plantn.setText();
+            // plantn.setText();
             conditionView.setText(condition);
-     //       diseaseView.setText(disease);
+            //       diseaseView.setText(disease);
             plantnoView.setText(plant);
-     //       diagnosisView.setText(diagnosis);
+            //       diagnosisView.setText(diagnosis);
 
-       // }
-
-
+            // }
 
 
-
-        //  picView.setText(pic);
+            //  picView.setText(pic);
 
      /*   String image = intent.getStringExtra(DevelopersAdapter.KEY_IMAGE);
         final String profileUrl = intent.getStringExtra(DevelopersAdapter.KEY_URL);
@@ -136,9 +139,9 @@ public class DisplayActivity extends AppCompatActivity {
                 .error(R.drawable.ic_cloud_off_red)
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(picView);*/
-        Picasso.with(this)
-                .load(pic)
-                .into(picView);
+            Picasso.with(this)
+                    .load(pic)
+                    .into(picView);
      /*   userNameTextView.setText(userName);
         developerUrl.setText(profileUrl);
 

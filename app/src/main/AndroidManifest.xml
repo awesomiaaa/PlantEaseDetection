@@ -42,7 +42,12 @@
             android:name=".Library"
             android:theme="@style/AppTheme.Library" />
         <activity android:name=".Summary" />
-        <activity android:name=".Loading"></activity>
+        <activity android:name=".Loading" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Main3Activity" />
+        <activity android:name=".Main4Activity" />
+        <activity android:name=".Main5Activity" />
+        <activity android:name=".Main6Activity"></activity>
     </application>
 
 </manifest>

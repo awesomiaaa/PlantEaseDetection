@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class TabFragment1 extends Fragment {
+public class Main2Activity extends Fragment {
     TextView tab;
 
     private RecyclerView recyclerView;
@@ -35,26 +35,23 @@ public class TabFragment1 extends Fragment {
 
 
         tab.setText(libdisease);
-    if(condition.equalsIgnoreCase("unhealthy")) {
-        if (disease.equalsIgnoreCase("Leaf Spot") || disease.equalsIgnoreCase("spot")) {
-            tab.setText("Leaf Spot");
-        } else if (disease.equalsIgnoreCase("Powdery Mildew") || disease.equalsIgnoreCase("mildew")) {
-            tab.setText("Powdery Mildew");
-        } else if (disease.equalsIgnoreCase("Anthracnose") || disease.equalsIgnoreCase("antracnose' ")) {
-            tab.setText("Anthracnose");
-        } else if (disease.equalsIgnoreCase("Late Blight ") || disease.equalsIgnoreCase("lateblight")) {
-            tab.setText("Late Blight");
-        } else if (disease.equalsIgnoreCase("not a plant") || disease.equalsIgnoreCase("object")) {
-            tab.setText("Not a Plant");
+     /*   if(condition.equalsIgnoreCase("unhealthy")) {
+            if (disease.equalsIgnoreCase("Leaf Spot")) {
+                tab.setText("Leaf Spot");
+            } else if (disease.equalsIgnoreCase("Powdery Mildew")) {
+                tab.setText("Powdery Mildew");
+            } else if (disease.equalsIgnoreCase("Anthracnose")) {
+                tab.setText("Anthracnose");
+            } else if (disease.equalsIgnoreCase("Late Blight")) {
+                tab.setText("Late Blight");
+            } else if (disease.equalsIgnoreCase("not a plant")) {
+                tab.setText("Not a Plant");
+            }
         }
-    }
-    else if(condition.equalsIgnoreCase("object")) {
-            tab.setText("Not a Plant");
-        }
-    else if(condition.equalsIgnoreCase("healthy") || disease.equalsIgnoreCase("HEALTHY")){
+        else if(condition.equalsIgnoreCase("healthy")){
             tab.setText("No Disease Detected");
         }
-
+*/
 
 
 

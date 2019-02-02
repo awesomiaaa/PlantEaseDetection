@@ -43,7 +43,7 @@ public class LibraryView extends AppCompatActivity {
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
-        final PagerAdapter adapter = new PagerAdapter
+        final Main3Activity adapter = new Main3Activity
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

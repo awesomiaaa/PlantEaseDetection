@@ -39,7 +39,7 @@ import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
 public class AddPlantActivity extends AppCompatActivity {
-    private static final String URL_DATA = "http://192.168.43.173:8080/Plant_Lists/?format=json";
+    private static final String URL_DATA = "http://172.20.10.5:8080/Plant_Lists/?format=json";
     private PlayersDataAdapter mAdapter;
     SwipeController swipeController = null;
     final Context context = this;
@@ -126,6 +126,7 @@ public class AddPlantActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         addPlantLists = new ArrayList<>();
 
+        System.out.println(recyclerView);
         swipeController = new SwipeController(new SwipeControllerActions() {
             @Override
             public void onRightClicked(int position) {

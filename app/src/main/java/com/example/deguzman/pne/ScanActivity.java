@@ -45,7 +45,7 @@ public class ScanActivity extends AppCompatActivity {
         ContentResolver contentResolver = context.getContentResolver();
         return Settings.System.getInt(contentResolver, AIRPLANE_MODE_ON, 0) != 0;
     }
-    private static final String URL_DATA = "http://192.168.43.173:8080/Scans/?format=json";
+    private static final String URL_DATA = "http://172.20.10.5:8080/Scans/?format=json";
     public static ProgressDialog progressDialog;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -201,20 +201,19 @@ public class ScanActivity extends AppCompatActivity {
 
                     recyclerView.setAdapter(adapter);
 
-
-                    if(jo.optString("status").equals("false")) {
+//                    if(jo.optString("status").equals("false")) {
                         progressDialog.dismiss();
-                    }else {
+                  /*  }else {
                         System.out.println(jo.optString("status"));
-                        Intent intent = getIntent();
+                      *//*  Intent intent = getIntent();
                         finish();
                         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
 
-
+*//*
 
                     }
-
+*/
 
 
                 } catch (JSONException e) {

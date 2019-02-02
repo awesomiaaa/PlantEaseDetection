@@ -66,7 +66,7 @@
                     android:tint="@color/colorPrimary"
                     />-->
 
-                <TextView
+               <!-- <TextView
                     android:id="@+id/name"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
@@ -75,7 +75,7 @@
                     android:layout_alignRight="@+id/mi"
                     android:layout_gravity="right"
                     android:text="LETTUCE"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"/>-->
 
                 <TextView
                     android:id="@+id/pn"

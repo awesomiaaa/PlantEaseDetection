@@ -60,7 +60,8 @@ public class AddPlantView extends AppCompatActivity {
 
 
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://192.168.43.173:8080/start", new AsyncHttpResponseHandler() {
+                client.setTimeout(70000);
+                client.get("http://172.20.10.5:8080/start", new AsyncHttpResponseHandler() {
 
 
                     @Override
@@ -85,7 +86,7 @@ public class AddPlantView extends AppCompatActivity {
                 });/*
                 System.out.println("done");*/
 
-                Intent i = new Intent(AddPlantView.this, ScanActivity.class);
+                Intent i = new Intent(AddPlantView.this, Loading.class);
                 startActivity(i);
             }
         });
